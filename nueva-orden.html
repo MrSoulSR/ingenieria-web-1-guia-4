@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Registra una nueva orden para una mesa en Restaurapp.">
+  <title>Nueva orden | Restaurapp</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar__top">
+        <a href="index.html" class="brand">
+          <img src="img/logo.svg" alt="Logo de Restaurapp" class="brand__logo" width="40" height="40">
+          <span class="brand__name">Restaurapp</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="nav" id="mainNav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Inicio</a></li>
+          <li><a href="ordenes.html" class="nav__link">Ordenes</a></li>
+          <li><a href="mesas.html" class="nav__link">Mesas</a></li>
+          <li><a href="menu.html" class="nav__link">Menú</a></li>
+          <li><a href="nueva-orden.html" class="nav__link is-active" aria-current="page">Nueva orden</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="content">
+      <main>
+        <section class="section">
+          <header class="section__header">
+            <h1 class="section__title">Nueva orden</h1>
+            <p class="section__hint">Elige la mesa y la cantidad de cada producto.</p>
+          </header>
+
+          <form class="form" id="orderForm" novalidate>
+            <div class="form__group">
+              <label for="table">Mesa</label>
+              <select id="table" name="table" required>
+                <option value="">Selecciona una mesa</option>
+                <option value="1">Mesa 1</option>
+                <option value="2">Mesa 2</option>
+                <option value="3">Mesa 3</option>
+                <option value="4">Mesa 4</option>
+                <option value="5">Mesa 5</option>
+                <option value="6">Mesa 6</option>
+                <option value="7">Mesa 7</option>
+                <option value="8">Mesa 8</option>
+              </select>
+              <small class="form__error"></small>
+            </div>
+
+            <div class="form__group form__group--full" id="itemsGroup">
+              <span class="form__legend" id="itemsLabel">Productos</span>
+              <div class="items" role="group" aria-labelledby="itemsLabel">
+                <div class="item">
+                  <label for="qty-burger">Hamburguesa clásica</label>
+                  <span class="item__price">$22.000</span>
+                  <input type="number" id="qty-burger" class="item__qty" name="burger" min="0" max="20" value="0" data-name="Hamburguesa clásica" data-price="22000">
+                </div>
+                <div class="item">
+                  <label for="qty-pizza">Pizza margarita</label>
+                  <span class="item__price">$25.000</span>
+                  <input type="number" id="qty-pizza" class="item__qty" name="pizza" min="0" max="20" value="0" data-name="Pizza margarita" data-price="25000">
+                </div>
+                <div class="item">
+                  <label for="qty-salad">Ensalada César</label>
+                  <span class="item__price">$18.000</span>
+                  <input type="number" id="qty-salad" class="item__qty" name="salad" min="0" max="20" value="0" data-name="Ensalada César" data-price="18000">
+                </div>
+                <div class="item">
+                  <label for="qty-lemonade">Limonada natural</label>
+                  <span class="item__price">$7.000</span>
+                  <input type="number" id="qty-lemonade" class="item__qty" name="lemonade" min="0" max="20" value="0" data-name="Limonada natural" data-price="7000">
+                </div>
+                <div class="item">
+                  <label for="qty-soda">Gaseosa</label>
+                  <span class="item__price">$6.000</span>
+                  <input type="number" id="qty-soda" class="item__qty" name="soda" min="0" max="20" value="0" data-name="Gaseosa" data-price="6000">
+                </div>
+                <div class="item">
+                  <label for="qty-water">Agua</label>
+                  <span class="item__price">$6.000</span>
+                  <input type="number" id="qty-water" class="item__qty" name="water" min="0" max="20" value="0" data-name="Agua" data-price="6000">
+                </div>
+              </div>
+              <small class="form__error"></small>
+            </div>
+
+            <div class="form__group form__group--full">
+              <label for="note">Nota para la cocina (opcional)</label>
+              <textarea id="note" name="note" rows="3" placeholder="Ej: sin cebolla"></textarea>
+            </div>
+
+            <div class="form__group form__group--full">
+              <p class="form__total"><span>Total</span><span id="orderTotal">$0</span></p>
+            </div>
+
+            <div class="form__group form__group--full">
+              <button type="submit" class="btn">Registrar orden</button>
+              <p class="form__success" id="formSuccess" role="status"></p>
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2026 Restaurapp. Todos los derechos reservados.</p>
+      </footer>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

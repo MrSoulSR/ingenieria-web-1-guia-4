@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Restaurapp, sistema para administrar las órdenes y mesas de un restaurante.">
+  <title>Restaurapp</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar__top">
+        <a href="index.html" class="brand">
+          <img src="img/logo.svg" alt="Logo de Restaurapp" class="brand__logo" width="40" height="40">
+          <span class="brand__name">Restaurapp</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="nav" id="mainNav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link is-active" aria-current="page">Inicio</a></li>
+          <li><a href="ordenes.html" class="nav__link">Ordenes</a></li>
+          <li><a href="mesas.html" class="nav__link">Mesas</a></li>
+          <li><a href="menu.html" class="nav__link">Menú</a></li>
+          <li><a href="nueva-orden.html" class="nav__link">Nueva orden</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="content">
+      <main>
+        <header>
+          <h1 class="page-title">Hola, Bienvenido a Restaurapp</h1>
+          <p class="page-subtitle">Resumen del día de tu restaurante.</p>
+        </header>
+
+        <section class="stats" aria-label="Resumen del día">
+          <article class="stat">
+            <span class="stat__value" id="statOrders">3</span>
+            <span class="stat__label">Órdenes activas</span>
+          </article>
+          <article class="stat">
+            <span class="stat__value" id="statFree">4</span>
+            <span class="stat__label">Mesas libres</span>
+          </article>
+          <article class="stat">
+            <span class="stat__value" id="statOccupied">4</span>
+            <span class="stat__label">Mesas ocupadas</span>
+          </article>
+          <article class="stat">
+            <span class="stat__value" id="statSales">$256.000</span>
+            <span class="stat__label">Ventas del día</span>
+          </article>
+        </section>
+
+        <nav class="actions" aria-label="Accesos rápidos">
+          <a href="nueva-orden.html" class="btn">Nueva orden</a>
+          <a href="ordenes.html" class="btn btn--outline">Ver órdenes</a>
+          <a href="mesas.html" class="btn btn--outline">Ver mesas</a>
+        </nav>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2026 Restaurapp. Todos los derechos reservados.</p>
+      </footer>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

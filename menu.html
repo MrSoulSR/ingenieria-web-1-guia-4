@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Menú de platos disponibles en Restaurapp.">
+  <title>Menú | Restaurapp</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar__top">
+        <a href="index.html" class="brand">
+          <img src="img/logo.svg" alt="Logo de Restaurapp" class="brand__logo" width="40" height="40">
+          <span class="brand__name">Restaurapp</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <nav class="nav" id="mainNav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Inicio</a></li>
+          <li><a href="ordenes.html" class="nav__link">Ordenes</a></li>
+          <li><a href="mesas.html" class="nav__link">Mesas</a></li>
+          <li><a href="menu.html" class="nav__link is-active" aria-current="page">Menú</a></li>
+          <li><a href="nueva-orden.html" class="nav__link">Nueva orden</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="content">
+      <main>
+        <section class="section">
+          <header class="section__header">
+            <h1 class="section__title">Menú</h1>
+          </header>
+
+          <div class="dishes">
+            <article class="dish">
+              <img src="img/hamburguer.png" alt="Hamburguesa clásica" class="dish__img" width="678" height="452" loading="lazy">
+              <div class="dish__body">
+                <h2 class="dish__name">Hamburguesa clásica</h2>
+                <p class="dish__desc">Carne de res, queso cheddar, lechuga, tomate y salsa de la casa.</p>
+                <div class="dish__footer">
+                  <span class="dish__price">$22.000</span>
+                  <a href="nueva-orden.html?dish=burger" class="btn btn--small">Ordenar</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="dish">
+              <img src="img/pizza.png" alt="Pizza margarita" class="dish__img" width="738" height="414" loading="lazy">
+              <div class="dish__body">
+                <h2 class="dish__name">Pizza margarita</h2>
+                <p class="dish__desc">Masa artesanal, salsa de tomate, mozzarella fresca y albahaca.</p>
+                <div class="dish__footer">
+                  <span class="dish__price">$25.000</span>
+                  <a href="nueva-orden.html?dish=pizza" class="btn btn--small">Ordenar</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="dish">
+              <img src="img/cesar-salad.png" alt="Ensalada César" class="dish__img" width="480" height="640" loading="lazy">
+              <div class="dish__body">
+                <h2 class="dish__name">Ensalada César</h2>
+                <p class="dish__desc">Lechuga romana, pollo a la plancha, crutones y aderezo César.</p>
+                <div class="dish__footer">
+                  <span class="dish__price">$18.000</span>
+                  <a href="nueva-orden.html?dish=salad" class="btn btn--small">Ordenar</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="dish">
+              <img src="img/lemon-juice.png" alt="Limonada natural" class="dish__img" width="1200" height="1205" loading="lazy">
+              <div class="dish__body">
+                <h2 class="dish__name">Limonada natural</h2>
+                <p class="dish__desc">Limón recién exprimido, agua y hielo.</p>
+                <div class="dish__footer">
+                  <span class="dish__price">$7.000</span>
+                  <a href="nueva-orden.html?dish=lemonade" class="btn btn--small">Ordenar</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="dish">
+              <img src="img/coke.png" alt="Gaseosa" class="dish__img dish__img--contain" width="447" height="447" loading="lazy">
+              <div class="dish__body">
+                <h2 class="dish__name">Gaseosa</h2>
+                <p class="dish__desc">Bebida gaseosa en lata de 350 ml.</p>
+                <div class="dish__footer">
+                  <span class="dish__price">$6.000</span>
+                  <a href="nueva-orden.html?dish=soda" class="btn btn--small">Ordenar</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="dish">
+              <img src="img/water.png" alt="Agua" class="dish__img" width="723" height="423" loading="lazy">
+              <div class="dish__body">
+                <h2 class="dish__name">Agua</h2>
+                <p class="dish__desc">Agua en botella de 600 ml.</p>
+                <div class="dish__footer">
+                  <span class="dish__price">$6.000</span>
+                  <a href="nueva-orden.html?dish=water" class="btn btn--small">Ordenar</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2026 Restaurapp. Todos los derechos reservados.</p>
+      </footer>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
